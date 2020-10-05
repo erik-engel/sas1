@@ -19,20 +19,22 @@ public class grid {
             hex t2 = new hex(temp,null,null,null,null,null,null);
             hexes.add(t2);
         }
-        for(int i = 0; i < hexes.size(); i++){
+        /*for(int i = 0; i < hexes.size(); i++){
             hex t1 = hexes.get(i);
             cords temp = t1.getX();
             //nord
-            cords tempN = (temp.getX()-1,temp.getY());
+            int north = temp.getX() - 1;
+            cords tempN = (temp.setX(north)),temp.setY(temp.getY()));
             //syd
 
 
-        }
+        }*/
 
     }
 
-    public hex find(){
+    /*public hex find(){
+        for
 
         return null;
-    }
+    }*/
 }
