@@ -27,7 +27,19 @@ public class Generer
             }
         }
 
+        // skal have en metode der gør det muligt for objekterne i Ocean at vide hvilke objekter der
+        // ligger nærliggende
 
+        public void hexNaboRelation(){
+
+        }
+
+
+
+
+
+
+        // dette sket ved oprettelsen af objekterne men gemmer denne metode midlertidigt
         // metode der iterere igennem alle de tomme objekter og giver dem en coordinat værdi
         /*
         public void opretCoordinat(){
