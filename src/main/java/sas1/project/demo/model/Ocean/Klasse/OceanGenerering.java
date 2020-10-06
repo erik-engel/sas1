@@ -8,7 +8,7 @@ import sas1.project.demo.model.Hex;
 
 import java.util.ArrayList;
 
-public class Generer
+public class OceanGenerering
 {
     // opretter tom ArrayListe til oprettelse af tomme objekter
     ArrayList<Hex> samletOcean = new ArrayList<>();
@@ -85,10 +85,19 @@ public class Generer
     }
 
     public void relationSider(Hex hexObj, int d){
-        //for at finde de resterende naboer er det nødvendigt at vide, hvorvidt feltets x-værdi er lige eller ulige, da vi anvender et forskudt grid
-        //int d vil være lig 0 ved lige x-værdier, og lig 1 ved ulige x-værdier.
-        //den måde vores grid er forskudt på gør at hvert felt har to naboer til hver side, men kun en nabo på hver side ligger på samme række/y-værdi
-
+        /*for at finde de resterende naboer er det nødvendigt at vide,
+        hvorvidt feltets x-værdi er lige eller ulige, da vi anvender et forskudt grid.
+        int d vil være lig 0 ved lige x-værdier, og lig 1 ved ulige x-værdier.
+        den måde vores grid er forskudt på gør at hvert felt har to naboer til hver side,
+        men kun en nabo på hver side ligger på samme række/y-værdi.
+        de ulige kolonner vil derfor ligge på række med sine sydlige naboer til siden,
+        mens de like kolonner ligger på række med de nordlige naboer til siden.
+        derfor må de ulige kolonners nordlige naboer ligge på rækken nordfor,
+        mens de lige kolonners sydlige naboer ligger på rækken sydfor.
+        da y-værdier bliver mindre jo længere mod nord man bevæger sig,
+        og de ulige kolonner er rykket et halvt felt nordligt,
+        vil hver nabo til siderne have en y-værdi som er 1 lavere for en ulige kolonne end en lige kolonne.
+        denne forskæl opnås ved at anvende modulo 2 af feltets x-værdi i beregningen.*/
             for(Hex tempHexObj: samletOcean) {
                 if (tempHexObj.getCord().getY() == hexObj.getCord().getY() - d &&
                         tempHexObj.getCord().getX() == hexObj.getCord().getX() - 1) {
