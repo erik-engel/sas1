@@ -71,15 +71,19 @@ public class Hex {
         this.southWest = southWest;
     }
 
+    /*
     @Override
     public boolean equals(Hex hex) {
         if (this == hex) return true;
         if (hex == null || getClass() != hex.getClass()) return false;
         return Objects.equals(cord, hex.cord);
     }
-
+     */
+    /*
     @Override
     public String toString() {
-        return cord.toString;
+        return this.cord;
     }
+     */
+
 }

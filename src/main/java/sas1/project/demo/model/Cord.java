@@ -1,11 +1,12 @@
 package sas1.project.demo.model;
 
-public class koordinat {
+public class Cord
+{
 
     int x; //horizontal
     int y; //vertical
 
-    public koordinat(int x, int y) {
+    public Cord(int x, int y) {
         this.x = x;
         this.y = y;
     }

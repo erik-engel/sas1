@@ -3,6 +3,9 @@ package sas1.project.demo.model.Ocean.Klasse;
 // skal importere klasserne hex og koordinat til oprettelse af liste som indeholder en masse
 // delobjekter af ocean til samlet.
 
+import sas1.project.demo.model.Cord;
+import sas1.project.demo.model.Hex;
+
 import java.util.ArrayList;
 
 public class Generer
@@ -19,7 +22,7 @@ public class Generer
         for(int i =0;i<y;i++){
             //nested forloop med x coordinat længde verticale værdier
             for(int j=0;j<x;j++){
-                samletOcean.add(new Hex(new Koordinat(j,i)));
+                samletOcean.add(new Hex(new Cord(j,i)));
 
             }
         }
