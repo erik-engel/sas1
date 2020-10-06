@@ -65,7 +65,8 @@ CREATE TABLE ship_type
     ship_type_max_sail INT NOT NULL,
     ship_type_sailors_for_sails INT NOT NULL,
     ship_type_max_speed INT NOT NULL,
-    ship_type_max_speed_change INT NOT NULL
+    ship_type_max_speed_change INT NOT NULL,
+    ship_type_turns_pr_turn INT NOT NULL
 );
 
  
@@ -119,15 +120,16 @@ VALUES
 INSERT INTO ship_type
    (ship_type_name, ship_type_nationality, ship_type_max_number_sailors, ship_type_number_gun_rows,
    ship_type_number_guns_pr_row, ship_type_sailors_for_guns, ship_type_max_hull_quality, ship_type_max_number_sails,
-   ship_type_max_sail, ship_type_sailors_for_sails, ship_type_max_speed, ship_type_max_speed_change)
+   ship_type_max_sail, ship_type_sailors_for_sails, ship_type_max_speed, ship_type_max_speed_change,ship_type_turns_pr_turn)
 VALUES
-   ('BRIG', 'Dansk', 60, 1, 8, 24, 25, 4, 30, 24, 2, 1);
+   ('BRIG', 'Dansk', 60, 1, 8, 24, 25, 4, 30, 24, 2, 1,1);
    
    
    
 -- SAS1.DB.STATEMENTS.SELECT/TEST
 SELECT * FROM players;
-SELECT * FROM map;
+SELECT * FROM maps;
+SELECT * FROM ship_type;
 
 
 
