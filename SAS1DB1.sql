@@ -1,3 +1,5 @@
+-- SAS1.DB.1.3
+
 -- SAS1.DB.CREATE
 DROP DATABASE IF EXISTS SAS1;
 CREATE DATABASE SAS1;
@@ -96,27 +98,54 @@ CREATE TABLE ship_actual
 );
 
 
-   
+
+-- SAS1.DB.AMMUNITION.TABLE
+CREATE TABLE ammunition
+(
+  ammunition_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  ammunition_name VARCHAR(45) NOT NULL,
+  ammunition_target VARCHAR(45) NOT NULL,
+  ammunition_crit_effect_1 VARCHAR(45) NOT NULL,
+  ammunition_crit_effect_2 VARCHAR(45) NOT NULL,
+  ammunition_brig_shot VARCHAR(10) NOT NULL,
+  ammunition_SotL_shot VARCHAR(10) NOT NULL,
+  ammunition_MaW_shot VARCHAR(10) NOT NULL
+);
+
+
 -- SAS1.DB.STATEMENTS.INSERT
+INSERT INTO ammunition
+    (ammunition_name, ammunition_target, ammunition_crit_effect_1, ammunition_crit_effect_2,
+     ammunition_brig_shot, ammunition_SotL_shot, ammunition_MaW_shot)
+     VALUES
+    ('Cannon Ball','Hull', 'Explosion', 'Rudder Lost', '2', '0,3,2','0,3,4,3'),
+    ('Chain Shot','Sail', '1', '0,33', '2', '0,3','0,3,4'),
+    ('Grape Shot','Crew', '0,5', '0,75', '2', '0,3','0,3,2');
 
+--
 INSERT INTO winds VALUES
-(1, "NE", 2);
+    (1, 'NE', 2);
 
+--
 INSERT INTO maps VALUES
-(1, 10,10);
+    (1, 10,10);
 
+--
 INSERT INTO players
   	(player_name)
 VALUES
       ('Preben'),
       ('Ole'),
       ('Harley');
-     
+
+--
 INSERT INTO games
    (game_name, game_round, map_id, wind_id)
 VALUES
    ('FIRST GAME', 1, 1, 1);
 
+
+--
 INSERT INTO ship_type
    (ship_type_name, ship_type_nationality, ship_type_max_number_sailors, ship_type_number_gun_rows,
    ship_type_number_guns_pr_row, ship_type_sailors_for_guns, ship_type_max_hull_quality, ship_type_max_number_sails,
