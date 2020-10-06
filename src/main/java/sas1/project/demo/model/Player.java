@@ -1,13 +1,18 @@
 package sas1.project.demo.model;
 
-public class player {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Player {
+    @Id
     private int playerId;
     private String playerName;
 
-    public player() {
+    public Player() {
     }
 
-    public player(int playerId, String playerName) {
+    public Player(int playerId, String playerName) {
         this.playerId = playerId;
         this.playerName = playerName;
     }
