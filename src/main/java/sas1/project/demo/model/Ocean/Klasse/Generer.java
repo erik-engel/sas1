@@ -49,8 +49,6 @@ public class Generer
         for(Hex hexObj: samletOcean){
 
 
-            if ()
-
             if (hexObj.getCord().getX()%2==0){
                 //checker om current hexobj x coordinat er heltal og sætter så x og y til +1
                 for(Hex tempHex: samletOcean){
@@ -69,9 +67,9 @@ public class Generer
         }
     }
 
-// seperat metode der skal finde ud af om bund coordinat matcher med et andet object i listen
-    // x=this og y=this+1
-    public void relationTopEllerBund(){
+// seperat metode der skal finde ud af om top coordinat matcher med et andet object i listen
+    // x=this og y=this-1
+    public void relationNorth(){
 
         for(Hex hexObj: samletOcean){
             for(Hex tempHexObj: samletOcean){
@@ -81,29 +79,20 @@ public class Generer
                 }
             }
         }
-}
+    }
+            // metode der skal sætte setsouth som matcher temp hex object coordinater med
+            // de ønskede koordinater
+    public void relationSouth(){
 
-
-
-
-
-
-
-        // dette sket ved oprettelsen af objekterne men gemmer denne metode midlertidigt
-        // metode der iterere igennem alle de tomme objekter og giver dem en coordinat værdi
-        /*
-        public void opretCoordinat(){
-            // iterere igennem y
-            for(int a=0;a<y;a++){
-                // iterere igennem x
-                for(int t=0;t<x;t++){
-                    samletOcean.add(Coordinat info med x og y);
-
+        for(Hex hexObj: samletOcean){
+            for(Hex tempHexObj: samletOcean){
+                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()+1 &&
+                        tempHexObj.getCord().getX()==hexObj.getCord().getX()){
+                    hexObj.setSouth(tempHexObj);
                 }
             }
         }
-        */
-
-
     }
+
+}
 
