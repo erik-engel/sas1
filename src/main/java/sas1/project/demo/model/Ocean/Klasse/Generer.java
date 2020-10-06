@@ -69,9 +69,18 @@ public class Generer
         }
     }
 
-
+// seperat metode der skal finde ud af om bund coordinat matcher med et andet object i listen
+    // x=this og y=this+1
     public void relationTopEllerBund(){
 
+        for(Hex hexObj: samletOcean){
+            for(Hex tempHexObj: samletOcean){
+                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()-1 &&
+                tempHexObj.getCord().getX()==hexObj.getCord().getX()){
+                    hexObj.setNorth(tempHexObj);
+                }
+            }
+        }
 }
 
 
