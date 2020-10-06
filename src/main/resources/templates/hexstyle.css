@@ -1,0 +1,29 @@
+.hexagon {
+    position: absolute;
+    width: 100px; /* 1 times pixels */
+    height: 86px; /* 0.866 times pixels */
+    background: darkblue;
+    display: inline-block;
+}
+.hexagon-even {
+    width: 100px;
+    height: 86px;
+    background: darkblue;
+    display: inline-block;
+    margin-top: 45px;
+    margin-left: 79px;
+    margin-right: -25px;
+}
+
+.hexagon:hover, .hexagon-even:hover{
+    background: blue;
+}
+
+.hexagon, .hexagon-even {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+}
+
+
+.row {
+    margin-bottom: -45px
+}
