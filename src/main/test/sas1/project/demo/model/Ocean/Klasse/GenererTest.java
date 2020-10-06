@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GenererTest extends Generer
+class oceanTest extends OceanGenerering
 {
 
     @BeforeEach
@@ -14,7 +14,7 @@ class GenererTest extends Generer
 
 
         // initialisere klassen ocean
-        Generer generere = new Generer();
+        OceanGenerering generere = new OceanGenerering();
 
         // kalder metoderne der opretter Ocean
         generere.OpretHelOcean(5,5);
@@ -26,24 +26,49 @@ class GenererTest extends Generer
     @Test
     void size()
     {
-        Generer generer = new Generer();
-
+        OceanGenerering generer = new OceanGenerering();
         generer.OpretHelOcean(5,5);
+
         assertEquals(25, generer.samletOcean.size() );
     }
 
     @Test
     void opretHelOcean()
     {
-        Generer generer = new Generer();
+        OceanGenerering generer = new OceanGenerering();
         generer.OpretHelOcean(5,5);
 
-        assertTrue(0,generer.samletOcean.get(0).getCord().getX());
+       int x= 0;
+       int y= generer.samletOcean.get(0).getCord().getY();
 
-    }
+        assertEquals(0,generer.samletOcean.get(0).getCord().getY() );
+        assertEquals(0,generer.samletOcean.get(0).getCord().getX() );
 
-    @Test
-    void hexNaboRelation()
-    {
+        assertEquals(4,generer.samletOcean.get(4).getCord().getX());
+        assertEquals(0,generer.samletOcean.get(4).getCord().getY());
+
+        assertEquals(0,generer.samletOcean.get(5).getCord().getX());
+        assertEquals(1,generer.samletOcean.get(5).getCord().getY());
+
+        assertEquals(0,generer.samletOcean.get(10).getCord().getX());
+        assertEquals(2,generer.samletOcean.get(10).getCord().getY());
+
+        assertEquals(0,generer.samletOcean.get(20).getCord().getX());
+        assertEquals(4,generer.samletOcean.get(20).getCord().getY());
+
+        assertEquals(3,generer.samletOcean.get(18).getCord().getX());
+        assertEquals(3,generer.samletOcean.get(18).getCord().getY());
+
+        assertEquals(2,generer.samletOcean.get(22).getCord().getX());
+        assertEquals(4,generer.samletOcean.get(22).getCord().getY());
+
+        // relations test
+
+        assertEquals(1, generer.samletOcean.get(0).getSouthEast().getCord().getX());
+        assertEquals(1, generer.samletOcean.get(0).getSouthEast().getCord().getY());
+
+        assertEquals(1, generer.samletOcean.get(6).getSouth().getCord().getX());
+        assertEquals(2, generer.samletOcean.get(6).getSouth().getCord().getY());
+
     }
 }

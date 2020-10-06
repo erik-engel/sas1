@@ -40,6 +40,8 @@ public class OceanGenerering
 
             }
         }
+
+        hexNaboRelation();
     }
         // skal have en metode der gør det muligt for objekterne i Ocean at vide hvilke objekter der
         // ligger nærliggende
