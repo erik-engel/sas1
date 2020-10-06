@@ -1,11 +1,11 @@
 package sas1.project.demo.model;
 
-public class koordinat {
+public class Koordinat {
 
     int x; //horizontal
     int y; //vertical
 
-    public koordinat(int x, int y) {
+    public Koordinat(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -34,3 +34,5 @@ public class koordinat {
                 '}';
     }
 }
+
+//if()
