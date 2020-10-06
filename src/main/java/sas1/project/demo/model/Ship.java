@@ -1,31 +1,48 @@
 package sas1.project.demo.model;
 
 public class Ship {
-    int sailors;
-    int maxSailors;
+    //Ships directions
+    public enum Direction {
+        N,
+        NE,
+        SE,
+        S,
+        SW,
+        NW
+    }
+    private boolean canTurn=true;
+    private Direction direction;
+    //Coordinate class needs definition from Ocean
+    private String position;
+
+    private int sailors;
+    private int maxSailors;
     //guns
-    int rowsOfGuns;
-    int gunsPrRow;
-    int gunsSailorsNeeded;
+    private int rowsOfGuns;
+    private int gunsPrRow;
+    private int gunsSailorsNeeded;
     //sails
-    int sailsHP;
-    int sails;
-    int maxSails;
-    int sailsSailorsNeeded;
+    private int sailsHP;
+    private int sails;
+    private int maxSails;
+    private int sailsSailorsNeeded;
     //hulls
-    int hullHP;
-    int maxHullHP;
+    private int hullHP;
+    private int maxHullHP;
     //speed
-    int speed;
-    int maxSpeed;
-    int maxSpeedChange;
+    private int speed;
+    private int maxSpeed;
+    private int maxSpeedChange;
     //moves
-    int numberOfTurns;
+    private int numberOfTurns;
 
     public Ship() {
     }
 
-    public Ship(int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+        this.canTurn = canTurn;
+        this.direction = direction;
+        this.position = position;
         this.sailors = sailors;
         this.maxSailors = maxSailors;
         this.rowsOfGuns = rowsOfGuns;
@@ -136,7 +153,15 @@ public class Ship {
     }
 
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (speed<0){
+            throw new IllegalArgumentException();
+        }
+        else if (speed>this.maxSpeed){
+            throw new IllegalArgumentException();
+        }
+        else {
+            this.speed = speed;
+        }
     }
 
     public int getMaxSpeed() {
@@ -161,6 +186,18 @@ public class Ship {
 
     public void setNumberOfTurns(int numberOfTurns) {
         this.numberOfTurns = numberOfTurns;
+    }
+
+    public int currentGunCapacity(){
+        int guns = (this.gunsPrRow*this.rowsOfGuns);
+        if (this.sailors<3) {
+            return 0;
+        }
+        int sailorsPerGun = this.sailors/3;
+        if (guns>sailorsPerGun){
+            return sailorsPerGun;
+        }
+        else { return guns; }
     }
 
     @Override
