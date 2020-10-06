@@ -47,9 +47,77 @@ public class Generer
         public void hexNaboRelation(){
 
         for(Hex hexObj: samletOcean){
+            //dette loop gennemgås med hvert punkt, for at finde det punkts naboer
 
+            relationNorth(hexObj);//her findes naboen nordfor
+            relationSouth(hexObj);//her findes naboen sydfor
+            relationSider(hexObj, hexObj.getCord().getX()%2);//her findes de resterende naboer
 
-            if (hexObj.getCord().getX()%2==0){
+            // checker om current hexobj x coordinat er ulige tal (rest ved modulus 2) så sæt x +1
+
+        }
+    }
+
+// seperat metode der skal finde ud af om top coordinat matcher med et andet object i listen
+    // x=this og y=this-1
+    public void relationNorth(Hex hexObj){
+            for(Hex tempHexObj: samletOcean){
+                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()-1 &&
+                tempHexObj.getCord().getX()==hexObj.getCord().getX()){
+                    hexObj.setNorth(tempHexObj);//punktets nordlige nabo findes baseret på forholdet mellem fælterne
+                    break;
+                }
+            }
+    }
+
+    public void relationSouth(Hex hexObj){
+            for(Hex tempHexObj: samletOcean){
+                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()+1 &&
+                        tempHexObj.getCord().getX()==hexObj.getCord().getX()){
+                    hexObj.setSouth(tempHexObj);//punktets sydlige nabo findes baseret på forholdet mellem fælterne
+                    break;
+                }
+            }
+    }
+
+    public void relationSider(Hex hexObj, int d){
+        //for at finde de resterende naboer er det nødvendigt at vide, hvorvidt feltets x-værdi er lige eller ulige, da vi anvender et forskudt grid
+        //int d vil være lig 0 ved lige x-værdier, og lig 1 ved ulige x-værdier.
+        //den måde vores grid er forskudt på gør at hvert felt har to naboer til hver side, men kun en nabo på hver side ligger på samme række/y-værdi
+
+            for(Hex tempHexObj: samletOcean) {
+                if (tempHexObj.getCord().getY() == hexObj.getCord().getY() - d &&
+                        tempHexObj.getCord().getX() == hexObj.getCord().getX() - 1) {
+                    hexObj.setNorthWest(tempHexObj);
+                    break;
+                }
+            }
+            for(Hex tempHexObj: samletOcean) {
+                if (tempHexObj.getCord().getY() == hexObj.getCord().getY() - d &&
+                        tempHexObj.getCord().getX() == hexObj.getCord().getX() + 1) {
+                    hexObj.setNorthEast(tempHexObj);
+                    break;
+                }
+            }
+            for(Hex tempHexObj: samletOcean) {
+                if (tempHexObj.getCord().getY() == hexObj.getCord().getY() + 1 - d &&
+                        tempHexObj.getCord().getX() == hexObj.getCord().getX() - 1) {
+                    hexObj.setSouthWest(tempHexObj);
+                    break;
+                }
+            }
+            for(Hex tempHexObj: samletOcean) {
+                if(tempHexObj.getCord().getY()==hexObj.getCord().getY() + 1 - d &&
+                        tempHexObj.getCord().getX()==hexObj.getCord().getX()+1){
+                    hexObj.setSouthEast(tempHexObj);
+                    break;
+                }
+            }
+
+    }
+
+    /*original kode til at finde én nabo, gemmes som sikkerhedsanordning:
+    if (hexObj.getCord().getX()%2==0){
                 //checker om current hexobj x coordinat er heltal og sætter så x og y til +1
                 for(Hex tempHex: samletOcean){
                     if(tempHex.getCord().getX()==hexObj.getCord().getX()+1
@@ -58,41 +126,8 @@ public class Generer
                         break;
                     }
                 }
-            }
-            // checker om current hexobj x coordinat er ulige tal (rest ved modulus 2) så sæt x +1
-            if(hexObj.getCord().getX()%2==0){
-                hexObj.setSouthEast(hexObj.getCord().getX()+1,hexObj.getCord().getY());
-            }
+            }*/
 
-        }
-    }
-
-// seperat metode der skal finde ud af om top coordinat matcher med et andet object i listen
-    // x=this og y=this-1
-    public void relationNorth(){
-
-        for(Hex hexObj: samletOcean){
-            for(Hex tempHexObj: samletOcean){
-                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()-1 &&
-                tempHexObj.getCord().getX()==hexObj.getCord().getX()){
-                    hexObj.setNorth(tempHexObj);
-                }
-            }
-        }
-    }
-            // metode der skal sætte setsouth som matcher temp hex object coordinater med
-            // de ønskede koordinater
-    public void relationSouth(){
-
-        for(Hex hexObj: samletOcean){
-            for(Hex tempHexObj: samletOcean){
-                if(tempHexObj.getCord().getY()==hexObj.getCord().getY()+1 &&
-                        tempHexObj.getCord().getX()==hexObj.getCord().getX()){
-                    hexObj.setSouth(tempHexObj);
-                }
-            }
-        }
-    }
 
 }
 
