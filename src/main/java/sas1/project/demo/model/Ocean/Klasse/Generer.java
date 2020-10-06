@@ -16,15 +16,18 @@ public class Generer
     int x;
     int y;
 
+    /*
     public void size(int x, int y){
 
         this.x = x;
         this.y = y;
     }
 
+     */
+
     // en metode der opretter de tomme hex objekter til af fylde med information
     // input x og y giver størrelsen af listen med objekter
-    public void OpretHelOcean()
+    public void OpretHelOcean(int x, int y)
     {
 
         // et forloop der iterere gennem og opretter hex objekter indtil y længde er fuldført
@@ -48,6 +51,7 @@ public class Generer
 
         for(Hex hexObj: samletOcean){
             //dette loop gennemgås med hvert punkt, for at finde det punkts naboer
+
 
             relationNorth(hexObj);//her findes naboen nordfor
             relationSouth(hexObj);//her findes naboen sydfor
