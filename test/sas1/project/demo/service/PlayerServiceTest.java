@@ -42,20 +42,27 @@ class PlayerServiceTest {
     @Test
     void readAll() {
         List<Player> players = Arrays.asList(p1,p2,p3);
+        Mockito.when(mockRepo.readAll()).thenReturn(players);
+
+        assertEquals(players,playerService.readAll());
     }
 
     @Test
     void create() {
-
+        Player p4 = new Player(4, "Ole");
+        Mockito.when(mockRepo.create(p4)).thenReturn(true);
+        assertTrue(playerService.create(p4));
     }
 
     @Test
     void update() {
-
+        Mockito.when(mockRepo.update(p3)).thenReturn(true);
+        assertTrue(playerService.update(p3));
     }
 
     @Test
     void delete() {
-
+        Mockito.when(mockRepo.delete(p3.getPlayerId())).thenReturn(true);
+        assertTrue(playerService.delete(p3.getPlayerId()));
     }
 }
