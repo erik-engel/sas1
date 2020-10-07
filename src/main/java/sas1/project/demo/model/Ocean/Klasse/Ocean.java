@@ -8,22 +8,14 @@ import sas1.project.demo.model.Hex;
 
 import java.util.ArrayList;
 
-public class OceanGenerering
+public class Ocean
 {
     // opretter tom ArrayListe til oprettelse af tomme objekter
     ArrayList<Hex> samletOcean = new ArrayList<>();
 
-    int x;
-    int y;
+    private int oceanx;
+    private int oceanY;
 
-    /*
-    public void size(int x, int y){
-
-        this.x = x;
-        this.y = y;
-    }
-
-     */
 
     // en metode der opretter de tomme hex objekter til af fylde med information
     // input x og y giver størrelsen af listen med objekter
@@ -49,7 +41,7 @@ public class OceanGenerering
 
         // lav en if else på hver retning som først checker om retningen går ud over den acceptable grænse.
         // hvis den ikke går ud over grænsen så sæt den pågældende værdi
-        public void hexNaboRelation(){
+        private void hexNaboRelation(){
 
         for(Hex hexObj: samletOcean){
             //dette loop gennemgås med hvert punkt, for at finde det punkts naboer
@@ -67,7 +59,7 @@ public class OceanGenerering
 
 // seperat metode der skal finde ud af om top coordinat matcher med et andet object i listen
     // x=this og y=this-1
-    public void relationNorth(Hex hexObj){
+    private void relationNorth(Hex hexObj){
             for(Hex tempHexObj: samletOcean){
                 if(tempHexObj.getCord().getY()==hexObj.getCord().getY()-1 &&
                 tempHexObj.getCord().getX()==hexObj.getCord().getX()){
@@ -77,7 +69,7 @@ public class OceanGenerering
             }
     }
 
-    public void relationSouth(Hex hexObj){
+    private void relationSouth(Hex hexObj){
             for(Hex tempHexObj: samletOcean){
                 if(tempHexObj.getCord().getY()==hexObj.getCord().getY()+1 &&
                         tempHexObj.getCord().getX()==hexObj.getCord().getX()){
@@ -87,7 +79,7 @@ public class OceanGenerering
             }
     }
 
-    public void relationSider(Hex hexObj, int d){
+    private void relationSider(Hex hexObj, int d){
         /*for at finde de resterende naboer er det nødvendigt at vide,
         hvorvidt feltets x-værdi er lige eller ulige, da vi anvender et forskudt grid.
         int d vil være lig 0 ved lige x-værdier, og lig 1 ved ulige x-værdier.
@@ -131,7 +123,7 @@ public class OceanGenerering
             }
 
     }
-
+}
     /*original kode til at finde én nabo, gemmes som sikkerhedsanordning:
     if (hexObj.getCord().getX()%2==0){
                 //checker om current hexobj x coordinat er heltal og sætter så x og y til +1
@@ -145,5 +137,5 @@ public class OceanGenerering
             }*/
 
 
-}
+
 

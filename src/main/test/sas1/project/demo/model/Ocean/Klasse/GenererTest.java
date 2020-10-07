@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GenererTest extends OceanGenerering
+class GenererTest
 {
 
     @BeforeEach
@@ -14,19 +14,18 @@ class GenererTest extends OceanGenerering
 
 
         // initialisere klassen ocean
-        OceanGenerering generere = new OceanGenerering();
+        Ocean generere = new Ocean();
 
         // kalder metoderne der opretter Ocean
+        // og så efterfølgende køre metoden der opretter relationer til Hex objekterne
         generere.OpretHelOcean(5,5);
 
-        // kalder metoderne der laver relationerne
-        generere.hexNaboRelation();
     }
 
     @Test
     void size()
     {
-        OceanGenerering generer = new OceanGenerering();
+        Ocean generer = new Ocean();
         generer.OpretHelOcean(5,5);
 
         assertEquals(25, generer.samletOcean.size() );
@@ -35,7 +34,7 @@ class GenererTest extends OceanGenerering
     @Test
     void opretHelOcean()
     {
-        OceanGenerering generer = new OceanGenerering();
+        Ocean generer = new Ocean();
         generer.OpretHelOcean(5,5);
 
        int x= 0;
