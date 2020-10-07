@@ -62,6 +62,7 @@ public class OceanGenerering
             // checker om current hexobj x coordinat er ulige tal (rest ved modulus 2) så sæt x +1
 
         }
+
     }
 
 // seperat metode der skal finde ud af om top coordinat matcher med et andet object i listen

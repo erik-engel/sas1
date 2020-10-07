@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class oceanTest extends OceanGenerering
+class GenererTest extends OceanGenerering
 {
 
     @BeforeEach
@@ -69,6 +69,10 @@ class oceanTest extends OceanGenerering
 
         assertEquals(1, generer.samletOcean.get(6).getSouth().getCord().getX());
         assertEquals(2, generer.samletOcean.get(6).getSouth().getCord().getY());
+
+        assertEquals(null, generer.samletOcean.get(0).getNorth());
+
+        assertEquals(null, generer.samletOcean.get(24).getSouth());
 
     }
 }
