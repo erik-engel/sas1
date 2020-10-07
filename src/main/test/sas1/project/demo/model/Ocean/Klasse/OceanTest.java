@@ -56,7 +56,7 @@ class OceanTest
         assertEquals(3,generer.samletOcean.get(18).getCord().getY());
 
         assertEquals(2,generer.samletOcean.get(22).getCord().getX());
-        assertEquals(4,generer.samletOcean.get(2200).getCord().getY());
+        assertEquals(4,generer.samletOcean.get(22).getCord().getY());
 
         // relations test
 
