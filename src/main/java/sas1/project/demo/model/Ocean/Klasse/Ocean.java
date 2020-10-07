@@ -13,6 +13,10 @@ public class Ocean
     // opretter tom ArrayListe til oprettelse af tomme objekter
     ArrayList<Hex> samletOcean = new ArrayList<>();
 
+    public ArrayList<Hex> getSamletOcean() {
+        return samletOcean;
+    }
+
     public Ocean()
     {
     }
