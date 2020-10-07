@@ -16,15 +16,20 @@
     background-size: 100% 100%;
 }
 
+.hexagon.moveable {
+    background-color: rgba(255,200,0,0.35);
+    background-blend-mode: overlay;
+}
+
 .hexagon:hover{
     animation-name: aim;
-    animation-duration: 1.5s;
+    animation-duration: 1.0s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
 
-.hexagon.move {
-    animation-name: move;
+.hexagon.moveto {
+    animation-name: moveto;
     animation-duration: 1.0s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -37,7 +42,7 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes move {
+@keyframes moveto {
     from{
         background-color: rgba(0,0,0,0);
         background-blend-mode: overlay;
