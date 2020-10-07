@@ -13,13 +13,41 @@ public class Ocean
     // opretter tom ArrayListe til oprettelse af tomme objekter
     ArrayList<Hex> samletOcean = new ArrayList<>();
 
+    public Ocean()
+    {
+    }
+
+    public Ocean(int oceanX, int oceanY)
+    {
+        // skal teste om input er korrekt f.eks. om det er negative værdier på oceanX eller oceanY
+        if(oceanX <0){
+            throw new IllegalArgumentException("oceanX is: "+ oceanX+", that is below 1 and therefore cant initialise a ocean");
+        }
+        if(oceanY <0){
+            throw new IllegalArgumentException("oceany is: "+ oceanY+", that is below 1 and therefore cant initialise a ocean");
+        }
+
+        // et forloop der iterere gennem og opretter hex objekter indtil y længde er fuldført
+        for (int i = 0; i < oceanY; i++)
+        {
+            //nested forloop med x coordinat længde verticale værdier
+            for (int j = 0; j < oceanX; j++)
+            {
+                samletOcean.add(new Hex(new Cord(j, i)));
+
+            }
+        }
+
+        hexNaboRelation();
+
+    }
 
     // en metode der opretter de tomme hex objekter til af fylde med information
     // input x og y giver størrelsen af listen med objekter
     public void OpretHelOcean(int oceanX, int oceanY)
     {
 
-        // skal teste om input er korrekt f.eks. om det er negative værdier eller
+        // skal teste om input er korrekt f.eks. om det er negative værdier på oceanX eller oceanY
         if(oceanX <0){
             throw new IllegalArgumentException("oceanX is: "+ oceanX+", that is below 1 and therefore cant initialise a ocean");
         }

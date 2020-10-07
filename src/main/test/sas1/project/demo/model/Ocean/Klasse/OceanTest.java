@@ -14,19 +14,16 @@ class OceanTest
 
 
         // initialisere klassen ocean
-        Ocean generere = new Ocean();
+        Ocean generere = new Ocean(5,5);
 
-        // kalder metoderne der opretter Ocean
-        // og så efterfølgende køre metoden der opretter relationer til Hex objekterne
-        generere.OpretHelOcean(5,5);
 
     }
 
     @Test
     void size()
     {
-        Ocean generer = new Ocean();
-        generer.OpretHelOcean(5,5);
+        Ocean generer = new Ocean(5,5);
+
 
         assertEquals(25, generer.samletOcean.size() );
     }
@@ -34,8 +31,8 @@ class OceanTest
     @Test
     void opretHelOcean()
     {
-        Ocean generer = new Ocean();
-        generer.OpretHelOcean(5,5);
+        Ocean generer = new Ocean(5,5);
+
 
        int x= 0;
        int y= generer.samletOcean.get(0).getCord().getY();
