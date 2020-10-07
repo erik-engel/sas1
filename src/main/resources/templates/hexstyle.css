@@ -3,7 +3,7 @@
     height: 86px; /* 0.866 times pixels */
     display: block;
     margin: 5px;
-    background: darkblue;
+    background-color: darkblue;
 }
 
 .hexagon.wave {
@@ -17,7 +17,46 @@
 }
 
 .hexagon:hover{
-    filter: brightness(75%);
+    animation-name: aim;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.hexagon.move {
+    animation-name: move;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.hexagon.aim {
+    animation-name: aim;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from{
+        background-color: rgba(0,0,0,0);
+        background-blend-mode: overlay;
+    }
+    to{
+        background-color: rgba(255,255,0,0.3);
+        background-blend-mode: overlay;
+    }
+}
+
+@keyframes aim {
+    from{
+        background-color: rgba(0,0,0,0);
+        background-blend-mode: overlay;
+    }
+    to{
+        background-color: rgba(255,0,0,0.3);
+        background-blend-mode: overlay;
+    }
 }
 
 .hexagon{

@@ -4,87 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="hexstyle.css">
+    <script src="hexScript.js"></script>
 </head>
-<body>
-    <div class="row">
-        <div class="hexagon wave"></div>
-        <div class="hexagon ship"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row-even">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row-even">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row-even">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row-even">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-    </div>
-    <div class="row-even">
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
-        <div class="hexagon"></div>
+<body onload="createRow(10, 5)">
+    <div style="margin: auto; width: fit-content">
+        <div id="board" style="display: inline-block"></div>
     </div>
 </body>
 </html>
