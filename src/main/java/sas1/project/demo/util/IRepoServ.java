@@ -8,7 +8,7 @@ public interface IRepoServ<T> {
 
     public List<T> readAll();
 
-    public boolean create (T t);
+    public T create (T t);
 
     public boolean update (T t);
 
