@@ -1,4 +1,4 @@
-package sas1.project.demo.model.Ocean.Klasse;
+package sas1.project.demo.model;
 
 // skal importere klasserne hex og koordinat til oprettelse af liste som indeholder en masse
 // delobjekter af ocean til samlet.
