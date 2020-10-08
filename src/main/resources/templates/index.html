@@ -9,44 +9,7 @@
 <body>
 <div class="jumbotron text-center">
     <h1>WELCOME</h1>
-</div>
-<div class="row">
-    <div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="player : ${players}">
-                <td th:text="${player.playerId}"></td>
-                <td th:text="${player.playerName}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<div class="row">
-    <div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th>ID</th>
-                <th>DIRECTION</th>
-                <th>SPEED</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="wind : ${winds}">
-                <td th:text="${wind.windId}"></td>
-                <td th:text="${wind.windDirection}"></td>
-                <td th:text="${wind.windSpeed}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <a th:href="hexagon" class="btn btn-primary btn-block">SEE OCEAN</a>
 </div>
 
 </body>

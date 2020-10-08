@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/hexstyle.css" rel="stylesheet" media="screen"
+          th:href="@{/css/hexstyle.css}"/>
+    <script src="../static/js/hexScript.js"
+            th:src="@{/js/hexScript.js}"></script>
+</head>
+<body onload="createRow(10, 7)">
+    <div style="margin: auto; width: fit-content">
+        <div id="board" style="display: inline-block"></div>
+    </div>
+
+    <div>
+        <button onclick="testStart()">start test</button>
+    </div>
+
+
+    <div>
+        <button onclick="testStart2()">start test2</button>
+    </div>
+</body>
+</html>
