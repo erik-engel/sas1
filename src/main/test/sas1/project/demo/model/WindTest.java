@@ -29,6 +29,7 @@ class WindTest
         assertTrue(res);
 
         wind.setWindDirection("S");
+        wind.getNewWindAttributes();
 
         boolean res1 = wind.getWindDirection().equals("S")||
                 wind.getWindDirection().equals("SE")||

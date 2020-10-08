@@ -86,19 +86,19 @@ public class Wind {
 
         if(currentDbWind=="S"){
             if(directionChange==1){
-                this.windDirection="SW";
+                this.windDirection="NE";
             }
             else if(directionChange==2||directionChange==3){
-                this.windDirection="SW";
+                this.windDirection="SE";
             }
             else if(directionChange==4||directionChange==5||directionChange==6||directionChange==7||directionChange==8||directionChange==9){
                 this.windDirection="S";
             }
             else if(directionChange==10||directionChange==11){
-                this.windDirection="SE";
+                this.windDirection="SW";
             }
             else{
-                this.windDirection="NE";
+                this.windDirection="NW";
             }
         }
         if(currentDbWind=="NE"){
@@ -168,7 +168,7 @@ public class Wind {
                 this.windDirection="N";
             }
             else{
-                this.windDirection="NW";
+                this.windDirection="NE";
             }
         }
 
