@@ -18,4 +18,9 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping ("/hexagon")
+    public String ocean(){
+        return "hexagon";
+    }
+
 }

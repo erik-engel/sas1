@@ -7,12 +7,12 @@
 }
 
 .hexagon.wave {
-    background-image: url("wave.jpg");
+    background-image: url("../images/wave.jpg");
     background-size: 100% 100%;
 }
 
 .hexagon.ship {
-    background-image: url("ship.jpg");
+    background-image: url("../images/ship.jpg");
     background-size: 100% 100%;
 }
 
