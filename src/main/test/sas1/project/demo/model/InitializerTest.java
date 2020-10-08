@@ -15,7 +15,7 @@ class InitializerTest {
         sizes[0] = "s";
         sizes[1] = "m";
         sizes[2] = "l";
-        Ocean ocean = new Ocean();
+        Ocean ocean;
         for (int i = 0; i < sizes.length; i++) {
             switch (sizes[i]) {
                 case "s":
