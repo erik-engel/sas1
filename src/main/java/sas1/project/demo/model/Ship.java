@@ -1,5 +1,8 @@
 package sas1.project.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ship {
     //Ships directions
     public enum Direction {
@@ -21,13 +24,14 @@ public class Ship {
     private int rowsOfGuns;
     private int gunsPrRow;
     private int gunsSailorsNeeded;
+    private int selectedAmmo;
     //sails
-    private int sailsHP;
+    private double sailsHP;
     private int sails;
     private int maxSails;
     private int sailsSailorsNeeded;
     //hulls
-    private int hullHP;
+    private Double hullHP;
     private int maxHullHP;
     //speed
     private int speed;
@@ -39,7 +43,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, double hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -48,6 +52,7 @@ public class Ship {
         this.rowsOfGuns = rowsOfGuns;
         this.gunsPrRow = gunsPrRow;
         this.gunsSailorsNeeded = gunsSailorsNeeded;
+        this.selectedAmmo = selectedAmmo;
         this.sailsHP = sailsHP;
         this.sails = sails;
         this.maxSails = maxSails;
@@ -58,6 +63,42 @@ public class Ship {
         this.maxSpeed = maxSpeed;
         this.maxSpeedChange = maxSpeedChange;
         this.numberOfTurns = numberOfTurns;
+    }
+
+    public int getSelectedAmmo() {
+        return selectedAmmo;
+    }
+
+    public void setSelectedAmmo(int selectedAmmo) {
+        this.selectedAmmo = selectedAmmo;
+    }
+
+    public boolean isCanTurn() {
+        return canTurn;
+    }
+
+    public void setCanTurn(boolean canTurn) {
+        this.canTurn = canTurn;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setHullHP(Double hullHP) {
+        this.hullHP = hullHP;
     }
 
     public int getSailors() {
@@ -100,11 +141,11 @@ public class Ship {
         this.gunsSailorsNeeded = gunsSailorsNeeded;
     }
 
-    public int getSailsHP() {
+    public double getSailsHP() {
         return sailsHP;
     }
 
-    public void setSailsHP(int sailsHP) {
+    public void setSailsHP(double sailsHP) {
         this.sailsHP = sailsHP;
     }
 
@@ -132,11 +173,11 @@ public class Ship {
         this.sailsSailorsNeeded = sailsSailorsNeeded;
     }
 
-    public int getHullHP() {
+    public double getHullHP() {
         return hullHP;
     }
 
-    public void setHullHP(int hullHP) {
+    public void setHullHP(double hullHP) {
         this.hullHP = hullHP;
     }
 

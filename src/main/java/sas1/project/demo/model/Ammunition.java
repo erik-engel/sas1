@@ -1,5 +1,6 @@
 package sas1.project.demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ammunition {

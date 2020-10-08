@@ -7,14 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class GunControlTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(GunControl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Attack.class);
     Ship s_generic;
     Ship.Direction direction = Ship.Direction.N;
     ArrayList<Integer> crits = new ArrayList<>();
@@ -41,7 +40,7 @@ class GunControlTest {
     @ParameterizedTest
     @MethodSource("setDamageTestData")
     void setDamage(int diceroll, int expected_damage) {
-        GunControl g1 = spy(new GunControl());
+        Attack g1 = spy(new Attack());
         doReturn(diceroll).when(g1).getRandomNumber();
         g1.setDamage(s_generic, ammo);
         LOGGER.info("dice roll    "+diceroll);
