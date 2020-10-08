@@ -18,7 +18,7 @@ public class Ship {
     //Coordinate class needs definition from Ocean
     private String position;
 
-    private int sailors;
+    private double sailors;
     private int maxSailors;
     //guns
     private int rowsOfGuns;
@@ -43,7 +43,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, double hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, String position, double sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, double hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -101,11 +101,11 @@ public class Ship {
         this.hullHP = hullHP;
     }
 
-    public int getSailors() {
+    public double getSailors() {
         return sailors;
     }
 
-    public void setSailors(int sailors) {
+    public void setSailors(double sailors) {
         this.sailors = sailors;
     }
 
@@ -229,12 +229,12 @@ public class Ship {
         this.numberOfTurns = numberOfTurns;
     }
 
-    public int currentGunCapacity(){
+    public double currentGunCapacity(){
         int guns = (this.gunsPrRow*this.rowsOfGuns);
         if (this.sailors<3) {
             return 0;
         }
-        int sailorsPerGun = this.sailors/3;
+        double sailorsPerGun = this.sailors/3;
         if (guns>sailorsPerGun){
             return sailorsPerGun;
         }

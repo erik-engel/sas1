@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class shipBrig extends Ship {
 
 
-    int sailors = 60;
+    double sailors = 60;
     int maxSailors = 60;
     //guns
     int rowsOfGuns = 1;
@@ -31,7 +31,7 @@ public class shipBrig extends Ship {
     public shipBrig() {
     }
 
-    public shipBrig(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns, int sailors1, int maxSailors1, int rowsOfGuns1, int gunsPrRow1, int gunsSailorsNeeded1, int sailsHP1, int sails1, int maxSails1, int sailsSailorsNeeded1, int hullHP1, int maxHullHP1, int speed1, int maxSpeed1, int maxSpeedChange1, int numberOfTurns1) {
+    public shipBrig(boolean canTurn, Direction direction, String position, double sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns, int sailors1, int maxSailors1, int rowsOfGuns1, int gunsPrRow1, int gunsSailorsNeeded1, int sailsHP1, int sails1, int maxSails1, int sailsSailorsNeeded1, int hullHP1, int maxHullHP1, int speed1, int maxSpeed1, int maxSpeedChange1, int numberOfTurns1) {
         super(canTurn, direction, position, sailors, maxSailors, rowsOfGuns, gunsPrRow, gunsSailorsNeeded, selectedAmmo, sailsHP, sails, maxSails, sailsSailorsNeeded, hullHP, maxHullHP, speed, maxSpeed, maxSpeedChange, numberOfTurns);
         this.sailors = sailors1;
         this.maxSailors = maxSailors1;
