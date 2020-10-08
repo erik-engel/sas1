@@ -17,15 +17,17 @@
 }
 
 .hexagon.moveable {
-    background-color: rgba(255,200,0,0.35);
+    background-color: rgba(255,200,0,0.2);
+    background-blend-mode: overlay;
+}
+
+.hexagon.aimable{
+    background-color: rgba(200,0,0,0.2);
     background-blend-mode: overlay;
 }
 
 .hexagon:hover{
-    animation-name: aim;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+    filter: brightness(75%);
 }
 
 .hexagon.moveto {
@@ -35,8 +37,8 @@
     animation-iteration-count: infinite;
 }
 
-.hexagon.aim {
-    animation-name: aim;
+.hexagon.aimto {
+    animation-name: aimto;
     animation-duration: 1.0s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -48,18 +50,18 @@
         background-blend-mode: overlay;
     }
     to{
-        background-color: rgba(255,255,0,0.3);
+        background-color: rgba(255,255,0,0.35);
         background-blend-mode: overlay;
     }
 }
 
-@keyframes aim {
+@keyframes aimto {
     from{
         background-color: rgba(0,0,0,0);
         background-blend-mode: overlay;
     }
     to{
-        background-color: rgba(255,0,0,0.3);
+        background-color: rgba(255,0,0,0.35);
         background-blend-mode: overlay;
     }
 }
