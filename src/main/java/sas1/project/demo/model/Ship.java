@@ -1,6 +1,9 @@
 package sas1.project.demo.model;
 
 public class Ship {
+    private int shipId;
+    private String shipType;
+    private int playerID;
     //Ships directions
     public enum Direction {
         N,
@@ -13,7 +16,7 @@ public class Ship {
     private boolean canTurn=true;
     private Direction direction;
     //Coordinate class needs definition from Ocean
-    private String position;
+    private Hex position;
 
     private int sailors;
     private int maxSailors;
@@ -39,7 +42,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, Hex position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -58,6 +61,21 @@ public class Ship {
         this.maxSpeed = maxSpeed;
         this.maxSpeedChange = maxSpeedChange;
         this.numberOfTurns = numberOfTurns;
+    }
+
+    public Ship(int shipId, String shipType, int playerID, Hex position, int sailors, int rowsOfGuns, int gunsPrRow, int sailsHP, int sails, int sailsSailorsNeeded, int hullHP, int speed) {
+        this.shipId = shipId;
+        this.shipType = shipType;
+        this.playerID = playerID;
+        this.position = position;
+        this.sailors = sailors;
+        this.rowsOfGuns = rowsOfGuns;
+        this.gunsPrRow = gunsPrRow;
+        this.sailsHP = sailsHP;
+        this.sails = sails;
+        this.sailsSailorsNeeded = sailsSailorsNeeded;
+        this.hullHP = hullHP;
+        this.speed = speed;
     }
 
     public int getSailors() {
