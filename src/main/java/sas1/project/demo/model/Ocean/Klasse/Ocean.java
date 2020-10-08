@@ -21,8 +21,29 @@ public class Ocean
     {
     }
 
-    public Ocean(int oceanX, int oceanY)
+    public Ocean(Character size)
     {
+        String s = String.valueOf(size).toLowerCase();
+        int oceanX, oceanY;
+        switch (s){
+            case "s":
+                oceanX = 10;
+                oceanY = 10;
+                break;
+            case "m":
+                oceanX = 20;
+                oceanY = 20;
+                break;
+            case "l":
+                oceanX = 40;
+                oceanY = 40;
+                break;
+            default:
+                oceanX = 20;
+                oceanY = 20;
+                break;
+        }
+
         // skal teste om input er korrekt f.eks. om det er negative værdier på oceanX eller oceanY
         if(oceanX <0){
             //ocean cant be less than 0 and constructor testing is a hassle at this point so set to 0
