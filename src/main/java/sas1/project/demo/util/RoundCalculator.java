@@ -3,6 +3,8 @@ package sas1.project.demo.util;
 import sas1.project.demo.model.Game;
 import sas1.project.demo.model.Hex;
 
+import java.util.List;
+
 
 public class RoundCalculator {
 
@@ -24,12 +26,23 @@ public class RoundCalculator {
         this.movement = movement;
     }
 
+    public void setRound(){
+
+    }
+
     public void resolveRound(){
         Speed speed = new Speed();
         p1MaxMoves = speed.speedChange(game.getWind(),game.getRoundP1().getShip());
         p2MaxMoves = speed.speedChange(game.getWind(),game.getRoundP2().getShip());
-        resolveMoves();
+        for(int i = 0; i < p1MaxMoves; i++){
+            resolveMoves();
+        }
+        game.getRoundP1().setTarget();
+        for(int j = 0; j < p1MaxMoves; j++){
+            resolveMoves();
+        }
         resolveAttack();
+
     }
 
     public void resolveMoves() {
