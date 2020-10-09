@@ -31,7 +31,7 @@ public class Attack {
                             break;
                         default:
                             // dividere med 2 så det kun er canons fra den ene side, da currentGunCapacity tager udgangspunkt i alle canons
-                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
+                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;
@@ -44,7 +44,7 @@ public class Attack {
                             targetShip.setSailsHP((int)(targetShip.getSailsHP() * 0.66));
                             break;
                         default:
-                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
+                            targetShip.setSailsHP(targetShip.getSailsHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.4));
                             break;
                     }
                     break;
@@ -57,7 +57,7 @@ public class Attack {
                             targetShip.setSailors(targetShip.getSailors() / 4);
                             break;
                         case 3:
-                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
+                            targetShip.setSailors(targetShip.getSailors()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.4));
                             break;
                     }
                     break;
@@ -89,7 +89,7 @@ public class Attack {
                             targetShip.setSailsHP((int)(targetShip.getSailsHP() * 0.66));
                             break;
                         default:
-                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
+                            targetShip.setSailsHP(targetShip.getSailsHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;
@@ -102,7 +102,7 @@ public class Attack {
                             targetShip.setSailors(targetShip.getSailors() / 4);
                             break;
                         case 3:
-                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
+                            targetShip.setSailors(targetShip.getSailors()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;
