@@ -4,6 +4,7 @@ import sas1.project.demo.model.Game;
 import sas1.project.demo.model.Hex;
 import sas1.project.demo.model.Round;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -53,8 +54,14 @@ public class RoundCalculator {
         return h;
     }
 
+    //Sende 1-3 mulige hexes til UI
     public void resolveMoves(Round r) {
-        Hex h = null;
+        ArrayList<Hex> movesPos = movement.movement(r.getShip());
+
+    }
+
+    // Modtage Hex fra UI
+    public void receiveMove(Hex h){
 
     }
 
