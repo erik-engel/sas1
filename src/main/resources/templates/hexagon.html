@@ -5,8 +5,10 @@
     <title>Title</title>
     <link href="../static/css/hexstyle.css" rel="stylesheet" media="screen"
           th:href="@{/css/hexstyle.css}"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="../static/js/hexScript.js"
             th:src="@{/js/hexScript.js}"></script>
+
 </head>
 <body onload="createRow(10, 7)">
     <div style="margin: auto; width: fit-content">
@@ -14,12 +16,12 @@
     </div>
 
     <div>
-        <button onclick="testStart()">start test</button>
+        <button onclick="sendToController()">start test</button>
     </div>
 
 
     <div>
-        <button onclick="testStart2()">start test2</button>
+        <button onclick="getFromController()">start test2</button>
     </div>
 </body>
 </html>

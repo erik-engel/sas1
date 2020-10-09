@@ -89,6 +89,10 @@ function removeAimAble(){
     }
 }
 
+function startProgram(){
+    createRow();
+}
+
 function testStart(){
     moveAction = true;
     setShip('2,2')
@@ -111,5 +115,28 @@ function testStart2(){
     aimList.push(document.getElementById("1,4"));
     aimList.push(document.getElementById("2,4"));
     setAimAble(aimList);
+}
+
+function sendToController(){
+    let str = "hello";
+    $.ajax({
+        type : "POST",
+        contentType : "apllication/json",
+        url : "/testsend",
+        dataType : "json",
+        data : JSON.stringify(str),
+    });
+}
+
+
+function getFromController(){
+    var returnList = [];
+    $.getJSON('/testget', function (jd) {
+        $.each(jd, function (index){
+            returnList.push(document.getElementById(jd[index].name));
+        })
+        removeSailAble();
+        setSailAble(returnList);
+    });
 }
 
