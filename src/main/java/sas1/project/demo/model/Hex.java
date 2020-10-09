@@ -11,6 +11,9 @@ public class Hex {
     private Hex northWest;
     private Hex southWest;
 
+    public Hex() {
+    }
+
     public Hex(Cord cord){
         this.cord = cord;
     }

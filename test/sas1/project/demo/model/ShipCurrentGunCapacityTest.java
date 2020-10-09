@@ -16,7 +16,7 @@ class ShipCurrentGunCapacityTest {
     @BeforeEach
     void setupTestData(){
     //ship types to test with guncapacity
-    s_generic = new Ship(true, direction, "center", 60,60, 1, 8, 24, 30, 4 , 4 ,24 , 25, 25,0,2,1,1);
+    s_generic = new Ship(true, direction, null, 60,60, 1, 8, 24, 30, 4 , 4 ,24 , 25, 25,0,2,1,1);
     s_brig = new shipBrig();
     s_man = new shipManAtWar();
     s_line = new shipShipOfLine();

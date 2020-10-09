@@ -26,7 +26,7 @@ public class shipShipOfLine extends Ship {
     public shipShipOfLine() {
     }
 
-    public shipShipOfLine(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns, int sailors1, int maxSailors1, int rowsOfGuns1, int gunsPrRow1, int gunsSailorsNeeded1, int sailsHP1, int sails1, int maxSails1, int sailsSailorsNeeded1, int hullHP1, int maxHullHP1, int speed1, int maxSpeed1, int maxSpeedChange1, int numberOfTurns1) {
+    public shipShipOfLine(boolean canTurn, Direction direction, Hex position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns, int sailors1, int maxSailors1, int rowsOfGuns1, int gunsPrRow1, int gunsSailorsNeeded1, int sailsHP1, int sails1, int maxSails1, int sailsSailorsNeeded1, int hullHP1, int maxHullHP1, int speed1, int maxSpeed1, int maxSpeedChange1, int numberOfTurns1) {
         super(canTurn, direction, position, sailors, maxSailors, rowsOfGuns, gunsPrRow, gunsSailorsNeeded, sailsHP, sails, maxSails, sailsSailorsNeeded, hullHP, maxHullHP, speed, maxSpeed, maxSpeedChange, numberOfTurns);
         this.sailors = sailors1;
         this.maxSailors = maxSailors1;
