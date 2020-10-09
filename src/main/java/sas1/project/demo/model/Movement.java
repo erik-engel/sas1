@@ -1,6 +1,7 @@
 package sas1.project.demo.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Movement
 {
@@ -16,17 +17,9 @@ public class Movement
 
     // gemme temp objects med ryk
 
-    ArrayList<Hex> newHex = new ArrayList<>();
 
-    public ArrayList<Hex> getNewHex() {
-        return newHex;
-    }
-
-    public Movement(){
-
-    }
-
-    public Movement(Ship ship){
+    public static List<Hex> Movement(Ship ship){
+        ArrayList<Hex> newHex = new ArrayList<>();
         switch(ship.getDirection()){
             case N:
                 newHex.add(ship.getPosition().getNorth());
@@ -71,7 +64,7 @@ public class Movement
                 }
                 break;
         }
-
+return newHex;
         //currentSpeed, numberOfTurns, position, direction,
     }
 
