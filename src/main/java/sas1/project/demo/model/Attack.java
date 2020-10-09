@@ -68,7 +68,7 @@ public class Attack {
                             // Crittes der med 2 ganges nuværende sailors med 0.75 da der skal fjernes 25 %
                             targetShip.setSailors((int) Math.ceil(targetShip.getSailors() * 0.75));
                             break;
-                        case 3:
+                        default:
                             /* dividere med 2 så det kun er canons fra den ene side, da currentGunCapacity tager udgangspunkt i alle canons, ganger capacity med
                              den givne hit chance for at beregne damage, dernæst trækkes den fra den nuværende mængde. */
                             targetShip.setSailors(targetShip.getSailors()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.4));
@@ -115,7 +115,7 @@ public class Attack {
                         case 2:
                             targetShip.setSailors((int) Math.ceil(targetShip.getSailors() * 0.75));
                             break;
-                        case 3:
+                        default:
                             targetShip.setSailors(targetShip.getSailors()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
