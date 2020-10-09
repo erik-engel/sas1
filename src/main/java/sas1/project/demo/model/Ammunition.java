@@ -1,5 +1,6 @@
 package sas1.project.demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ammunition {
@@ -11,13 +12,13 @@ public class Ammunition {
     int id;
     String name;
     String target;
-    List<String> critEffect;
+    List<Integer> critEffect;
     Range range;
 
     public Ammunition() {
     }
 
-    public Ammunition(int id, String name, String target, List<String> critEffect, Range range) {
+    public Ammunition(int id, String name, String target, List<Integer> critEffect, Range range) {
         this.id = id;
         this.name = name;
         this.target = target;
@@ -49,11 +50,11 @@ public class Ammunition {
         this.target = target;
     }
 
-    public List<String> getCritEffect() {
+    public List<Integer> getCritEffect() {
         return critEffect;
     }
 
-    public void setCritEffect(List<String> critEffect) {
+    public void setCritEffect(List<Integer> critEffect) {
         this.critEffect = critEffect;
     }
 
@@ -64,6 +65,8 @@ public class Ammunition {
     public void setRange(Range range) {
         this.range = range;
     }
+
+
 }
 
 

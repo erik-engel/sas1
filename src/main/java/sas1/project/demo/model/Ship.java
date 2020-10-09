@@ -21,6 +21,7 @@ public class Ship {
     private int rowsOfGuns;
     private int gunsPrRow;
     private int gunsSailorsNeeded;
+    private int selectedAmmo;
     //sails
     private int sailsHP;
     private int sails;
@@ -39,7 +40,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, Hex position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, Hex position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -48,6 +49,7 @@ public class Ship {
         this.rowsOfGuns = rowsOfGuns;
         this.gunsPrRow = gunsPrRow;
         this.gunsSailorsNeeded = gunsSailorsNeeded;
+        this.selectedAmmo = selectedAmmo;
         this.sailsHP = sailsHP;
         this.sails = sails;
         this.maxSails = maxSails;
@@ -58,6 +60,35 @@ public class Ship {
         this.maxSpeed = maxSpeed;
         this.maxSpeedChange = maxSpeedChange;
         this.numberOfTurns = numberOfTurns;
+    }
+
+    public int getSelectedAmmo() {
+        return selectedAmmo;
+    }
+
+    public void setSelectedAmmo(int selectedAmmo) {
+        this.selectedAmmo = selectedAmmo;
+    }
+
+    public boolean isCanTurn() {
+        return canTurn;
+    }
+
+    public void setCanTurn(boolean canTurn) {
+        this.canTurn = canTurn;
+    }
+
+
+    public Hex getPosition() {
+        return position;
+    }
+
+    public void setPosition(Hex position) {
+        this.position = position;
+    }
+
+    public void setHullHP(int hullHP) {
+        this.hullHP = hullHP;
     }
 
     public Direction getDirection() {
@@ -150,10 +181,6 @@ public class Ship {
 
     public int getHullHP() {
         return hullHP;
-    }
-
-    public void setHullHP(int hullHP) {
-        this.hullHP = hullHP;
     }
 
     public int getMaxHullHP() {
