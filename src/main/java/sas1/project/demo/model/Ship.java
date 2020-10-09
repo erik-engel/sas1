@@ -78,15 +78,6 @@ public class Ship {
         this.canTurn = canTurn;
     }
 
-
-    public Hex getPosition() {
-        return position;
-    }
-
-    public void setPosition(Hex position) {
-        this.position = position;
-    }
-
     public void setHullHP(int hullHP) {
         this.hullHP = hullHP;
     }
