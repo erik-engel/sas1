@@ -63,7 +63,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.SE) || ship.getDirection().equals(Ship.Direction.SW)){
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
                         currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.S)){
                         currentSpeed = 0;
@@ -79,7 +82,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.S) || ship.getDirection().equals(Ship.Direction.NW)){
-                        currentSpeed = ship.getSpeed() -1;
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
+                            currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.SW)){
                         currentSpeed = 0;
@@ -95,7 +101,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.SW) || ship.getDirection().equals(Ship.Direction.N)){
-                        currentSpeed = ship.getSpeed() -1;
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
+                            currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.NW)){
                         currentSpeed = 0;
@@ -111,7 +120,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.NE) || ship.getDirection().equals(Ship.Direction.NW)){
-                        currentSpeed = ship.getSpeed() -1;
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
+                            currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.N)){
                         currentSpeed = 0;
@@ -127,7 +139,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.SE) || ship.getDirection().equals(Ship.Direction.N)){
-                        currentSpeed = ship.getSpeed() -1;
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
+                            currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.NE)){
                         currentSpeed = 0;
@@ -143,7 +158,10 @@ public class Speed {
                         }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.S) || ship.getDirection().equals(Ship.Direction.NE)){
-                        currentSpeed = ship.getSpeed() -1;
+                        if(currentSpeed -1 < 0){currentSpeed = 0;}
+                        else{
+                            currentSpeed = ship.getSpeed() -1;
+                        }
                     }
                     else if(ship.getDirection().equals(Ship.Direction.SE)){
                         currentSpeed = 0;

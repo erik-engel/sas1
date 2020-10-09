@@ -121,4 +121,27 @@ class SpeedTest {
         s_line.setSails(0);
         assertEquals(speed.speedChange(),0);
     }
+
+    @Test// test with Zero speed with windDirection setting to -1
+    void speedchangeMAW(){
+        // Tester på om speed forbliver 0 og reducere til minus tal ved svag modvind
+        Speed speed = new Speed(s_man,wind);
+        s_man.setSpeed(0);
+        s_man.setDirection(Ship.Direction.SE);
+        assertEquals(speed.speedChange(),0);
+        //Tester på at skibets speed overholder fartgrænsen
+        s_man.setSpeed(4);
+        s_man.setDirection(Ship.Direction.NE);
+        assertEquals(speed.speedChange(),4);
+        //Tester på at skibet stopper i modvind
+        s_man.setSpeed(4);
+        s_man.setDirection(Ship.Direction.S);
+        assertEquals(speed.speedChange(),0);
+
+    }
+
+
+
+
+
 }
