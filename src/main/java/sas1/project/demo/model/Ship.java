@@ -1,6 +1,9 @@
 package sas1.project.demo.model;
 
 public class Ship {
+    private int shipId;
+    private String shipType;
+    private int playerID;
     //Ships directions
     public enum Direction {
         N,
@@ -10,6 +13,7 @@ public class Ship {
         SW,
         NW
     }
+
     private boolean canTurn=true;
     private Direction direction;
     //Coordinate class needs definition from Ocean
@@ -78,10 +82,6 @@ public class Ship {
         this.canTurn = canTurn;
     }
 
-    public void setHullHP(int hullHP) {
-        this.hullHP = hullHP;
-    }
-
     public Direction getDirection() {
         return direction;
     }
@@ -147,7 +147,15 @@ public class Ship {
     }
 
     public int getSails() {
-        return sails;
+
+        if (this.sailors<6) {
+            return 0;
+        }
+        int sailorsPerSail = this.sailors/6;
+        if(this.sails>sailorsPerSail){
+            return sailorsPerSail;
+        }
+        else {return sails;}
     }
 
     public void setSails(int sails) {
@@ -174,6 +182,10 @@ public class Ship {
         return hullHP;
     }
 
+    public void setHullHP(int hullHP) {
+        this.hullHP = hullHP;
+    }
+
     public int getMaxHullHP() {
         return maxHullHP;
     }
@@ -187,6 +199,7 @@ public class Ship {
     }
 
     public void setSpeed(int speed) {
+
         if (speed<0){
             throw new IllegalArgumentException();
         }

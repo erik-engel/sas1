@@ -47,5 +47,5 @@ public class shipBrig extends Ship {
         this.maxSpeed = maxSpeed1;
         this.maxSpeedChange = maxSpeedChange1;
         this.numberOfTurns = numberOfTurns1;
-    }
+
 }

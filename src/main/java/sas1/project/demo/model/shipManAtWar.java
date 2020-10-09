@@ -42,5 +42,7 @@ public class shipManAtWar extends Ship {
         this.maxSpeed = maxSpeed1;
         this.maxSpeedChange = maxSpeedChange1;
         this.numberOfTurns = numberOfTurns1;
+    public shipManAtWar(boolean canTurn, Direction direction, Cord position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+        super(canTurn, direction, position, sailors, maxSailors, rowsOfGuns, gunsPrRow, gunsSailorsNeeded, sailsHP, sails, maxSails, sailsSailorsNeeded, hullHP, maxHullHP, speed, maxSpeed, maxSpeedChange, numberOfTurns);
     }
 }
