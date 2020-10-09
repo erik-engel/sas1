@@ -2,6 +2,7 @@ package sas1.project.demo.util;
 
 import sas1.project.demo.model.Game;
 import sas1.project.demo.model.Hex;
+import sas1.project.demo.model.Round;
 
 import java.util.List;
 
@@ -35,17 +36,25 @@ public class RoundCalculator {
         p1MaxMoves = speed.speedChange(game.getWind(),game.getRoundP1().getShip());
         p2MaxMoves = speed.speedChange(game.getWind(),game.getRoundP2().getShip());
         for(int i = 0; i < p1MaxMoves; i++){
-            resolveMoves();
+            resolveMoves(game.getRoundP1());
         }
-        game.getRoundP1().setTarget();
+        game.getRoundP1().setTarget(resolveTarget(game.getRoundP1()));
         for(int j = 0; j < p1MaxMoves; j++){
-            resolveMoves();
+            resolveMoves(game.getRoundP2());
         }
-        resolveAttack();
+        game.getRoundP2().setTarget(resolveTarget(game.getRoundP2()));
+
 
     }
 
-    public void resolveMoves() {
+    private Hex resolveTarget(Round r) {
+        Hex h = null;
+
+        return h;
+    }
+
+    public void resolveMoves(Round r) {
+        Hex h = null;
 
     }
 
