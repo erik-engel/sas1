@@ -36,16 +36,11 @@ public class HomeController {
     public String newGame(@ModelAttribute Game game){
         Game g = new Game();
 //        gameService.create(model);
-        resolveRound(g);
         return "redirect:/hexagon";
     }
 
 
     public void initializeGame(){
 
-    }
-
-    public void resolveRound(Game g){
-        roundCalc.resolveRound(g);
     }
 }

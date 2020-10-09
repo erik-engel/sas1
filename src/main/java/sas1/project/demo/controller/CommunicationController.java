@@ -13,6 +13,6 @@ public class CommunicationController {
     }
 
     public void resolveRound(Game g){
-        roundCalc.resolveRound(g);
+        //roundCalc.resolveRound(g);
     }
 }

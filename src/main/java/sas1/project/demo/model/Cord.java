@@ -1,7 +1,6 @@
 package sas1.project.demo.model;
 
-public class Cord
-{
+public class Cord implements Comparable<Cord>{
 
     int x; //horizontal
     int y; //vertical
@@ -33,5 +32,16 @@ public class Cord
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Cord o) {
+        if(this.x<o.x || this.y<o.y){
+            return 1;
+        }
+        else if(this.x>o.x || this.y>o.y){
+            return -1;
+        }
+        else return 0;
     }
 }
