@@ -20,7 +20,7 @@ public class Attack {
         int roll = getRandomNumber();//rand.nextInt(20) + 1;
         // switch på ternings roll som bestemmer damage på modstander skib, ammunition skal opdateres så man kan få criteffect fra listen
         if(hitChance == 40){
-            switch (targetShip.getSelectedAmmo()) {
+            switch (attackerShip.getSelectedAmmo()) {
                 case 1:
                     switch (roll) {
                         case 1:
@@ -31,7 +31,7 @@ public class Attack {
                             break;
                         default:
                             // dividere med 2 så det kun er canons fra den ene side, da currentGunCapacity tager udgangspunkt i alle canons
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.4);
+                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
                             break;
                     }
                     break;
@@ -41,10 +41,10 @@ public class Attack {
                             targetShip.setSailsHP(0);
                             break;
                         case 2:
-                            targetShip.setSailsHP(targetShip.getSailsHP() * 0.66);
+                            targetShip.setSailsHP((int)(targetShip.getSailsHP() * 0.66));
                             break;
                         default:
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.4);
+                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
                             break;
                     }
                     break;
@@ -57,7 +57,7 @@ public class Attack {
                             targetShip.setSailors(targetShip.getSailors() / 4);
                             break;
                         case 3:
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.4);
+                            targetShip.setHullHP((int)((attackerShip.currentGunCapacity() / 2) * 0.4));
                             break;
                     }
                     break;
@@ -65,7 +65,7 @@ public class Attack {
                     break;
             }
             } else {
-            switch (targetShip.getSelectedAmmo()) {
+            switch (attackerShip.getSelectedAmmo()) {
                 case 1:
                     switch (roll) {
                         case 1:
@@ -76,7 +76,7 @@ public class Attack {
                             break;
                         default:
                             // dividere med 2 så det kun er canons fra den ene side, da currentGunCapacity tager udgangspunkt i alle canons
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.1);
+                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;
@@ -86,10 +86,10 @@ public class Attack {
                             targetShip.setSailsHP(0);
                             break;
                         case 2:
-                            targetShip.setSailsHP(targetShip.getSailsHP() * 0.66);
+                            targetShip.setSailsHP((int)(targetShip.getSailsHP() * 0.66));
                             break;
                         default:
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.1);
+                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;
@@ -102,7 +102,7 @@ public class Attack {
                             targetShip.setSailors(targetShip.getSailors() / 4);
                             break;
                         case 3:
-                            targetShip.setHullHP((attackerShip.currentGunCapacity() / 2) * 0.1);
+                            targetShip.setHullHP(targetShip.getHullHP()-(int) Math.ceil((attackerShip.currentGunCapacity() / 2) * 0.1));
                             break;
                     }
                     break;

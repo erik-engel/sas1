@@ -7,8 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShipSetSpeedTest {
 
+    ShipTestData shipTestData = new ShipTestData();
     Ship.Direction direction = Ship.Direction.N;
-    Ship s1 = new Ship(true, direction, "center", 60,60, 1, 8, 24, 30, 4 , 4 ,24 , 25, 25,0,2,1,1);
+    Ship s1 = shipTestData.getTestShip();
 
 
     @ParameterizedTest(name= "{index}: setSpeed({0})")

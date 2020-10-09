@@ -1,8 +1,5 @@
 package sas1.project.demo.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Ship {
     //Ships directions
     public enum Direction {
@@ -18,7 +15,7 @@ public class Ship {
     //Coordinate class needs definition from Ocean
     private String position;
 
-    private double sailors;
+    private int sailors;
     private int maxSailors;
     //guns
     private int rowsOfGuns;
@@ -26,12 +23,12 @@ public class Ship {
     private int gunsSailorsNeeded;
     private int selectedAmmo;
     //sails
-    private double sailsHP;
+    private int sailsHP;
     private int sails;
     private int maxSails;
     private int sailsSailorsNeeded;
     //hulls
-    private Double hullHP;
+    private int hullHP;
     private int maxHullHP;
     //speed
     private int speed;
@@ -43,7 +40,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, String position, double sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, double sailsHP, int sails, int maxSails, int sailsSailorsNeeded, double hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, String position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int selectedAmmo, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -97,15 +94,15 @@ public class Ship {
         this.position = position;
     }
 
-    public void setHullHP(Double hullHP) {
+    public void setHullHP(int hullHP) {
         this.hullHP = hullHP;
     }
 
-    public double getSailors() {
+    public int getSailors() {
         return sailors;
     }
 
-    public void setSailors(double sailors) {
+    public void setSailors(int sailors) {
         this.sailors = sailors;
     }
 
@@ -141,11 +138,11 @@ public class Ship {
         this.gunsSailorsNeeded = gunsSailorsNeeded;
     }
 
-    public double getSailsHP() {
+    public int getSailsHP() {
         return sailsHP;
     }
 
-    public void setSailsHP(double sailsHP) {
+    public void setSailsHP(int sailsHP) {
         this.sailsHP = sailsHP;
     }
 
@@ -173,12 +170,8 @@ public class Ship {
         this.sailsSailorsNeeded = sailsSailorsNeeded;
     }
 
-    public double getHullHP() {
+    public int getHullHP() {
         return hullHP;
-    }
-
-    public void setHullHP(double hullHP) {
-        this.hullHP = hullHP;
     }
 
     public int getMaxHullHP() {
@@ -229,14 +222,14 @@ public class Ship {
         this.numberOfTurns = numberOfTurns;
     }
 
-    public double currentGunCapacity(){
+    public int currentGunCapacity(){
         int guns = (this.gunsPrRow*this.rowsOfGuns);
         if (this.sailors<3) {
             return 0;
         }
         double sailorsPerGun = this.sailors/3;
         if (guns>sailorsPerGun){
-            return sailorsPerGun;
+            return (int) sailorsPerGun;
         }
         else { return guns; }
     }
