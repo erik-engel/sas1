@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovementTest {
+    Movement movement;
 
     @BeforeEach
     void setup()
@@ -15,6 +16,7 @@ class MovementTest {
         // initialisere klassen ocean
         char size = 's';
         Ocean generere = new Ocean(size);
+        movement = new Movement();
 
     }
 
@@ -28,8 +30,8 @@ class MovementTest {
         Hex hex = new Hex(cord);
         ship.setPosition(hex);
         ship.setNumberOfTurns(1);
-        assertEquals(3, Movement.Movement(ship).size());
+        assertEquals(3, movement.getMove(ship).size());
         ship.setNumberOfTurns(0);
-        assertEquals(1, Movement.Movement(ship).size());
+        assertEquals(1, movement.getMove(ship).size());
     }
 }
