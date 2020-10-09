@@ -9,15 +9,15 @@ class SpeedTest {
     Ship s_man;
     Ship s_line;
     Wind wind;
-    Cord cord;
+    Hex cord;
 
     @BeforeEach
     void setupTestData(){
         wind = new Wind(1,"N",5);
-        cord = new Cord(0,0);
-        s_brig = new shipBrig(true,direction,cord, 60, 60, 1, 8, 24, 30, 4, 4, 24, 25, 25, 2, 2, 1, 1);
-        s_man = new shipManAtWar(true,direction,cord, 340, 340, 3, 28, 84, 80, 24, 24, 144, 140, 140, 4, 4, 1, 1);
-        s_line = new shipShipOfLine(true,direction,cord, 160, 160, 2, 16, 48, 60, 10, 10, 60, 60, 60, 5, 5, 2, 2);
+        cord = new Hex(new Cord(0,0));
+        s_brig = new shipBrig(true,direction,cord, 60, 60, 1, 8, 24, 1,30, 4, 4, 24, 25, 25, 2, 2, 1, 1);
+        s_man = new shipManAtWar(true,direction,cord, 340, 340, 3, 28, 1,84, 80, 24, 24, 144, 140, 140, 4, 4, 1, 1);
+        s_line = new shipShipOfLine(true,direction,cord, 160, 160, 2, 16, 1,48, 60, 10, 10, 60, 60, 60, 5, 5, 2, 2);
 
     }
     @Test

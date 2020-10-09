@@ -18,7 +18,7 @@ public class Movement
     // gemme temp objects med ryk
 
 
-    public static List<Hex> Movement(Ship ship){
+    public static List<Hex> movement(Ship ship){
         ArrayList<Hex> newHex = new ArrayList<>();
         switch(ship.getDirection()){
             case N:

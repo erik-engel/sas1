@@ -29,7 +29,7 @@ public class GameService implements IRepoServ<Game> {
 
     @Override
     public boolean create(Game game) {
-        return testRepository.testGame();
+        return gameRepository.create(game);
     }
 
     @Override
