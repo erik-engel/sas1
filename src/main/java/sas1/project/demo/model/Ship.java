@@ -1,6 +1,9 @@
 package sas1.project.demo.model;
 
 public class Ship {
+    private int shipId;
+    private String shipType;
+    private int playerID;
     //Ships directions
     public enum Direction {
         N,
@@ -14,7 +17,8 @@ public class Ship {
     private boolean canTurn=true;
     private Direction direction;
     //Coordinate class needs definition from Ocean
-    private Cord position = new Cord(0,0);
+    private Hex position;
+
     private int sailors;
     private int maxSailors;
     //guns
@@ -39,7 +43,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(boolean canTurn, Direction direction, Cord position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
+    public Ship(boolean canTurn, Direction direction, Hex position, int sailors, int maxSailors, int rowsOfGuns, int gunsPrRow, int gunsSailorsNeeded, int sailsHP, int sails, int maxSails, int sailsSailorsNeeded, int hullHP, int maxHullHP, int speed, int maxSpeed, int maxSpeedChange, int numberOfTurns) {
         this.canTurn = canTurn;
         this.direction = direction;
         this.position = position;
@@ -74,14 +78,6 @@ public class Ship {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
-    }
-
-    public Cord getPosition() {
-        return position;
-    }
-
-    public void setPosition(Cord position) {
-        this.position = position;
     }
 
     public int getSailors() {
